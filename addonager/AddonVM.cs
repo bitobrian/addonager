@@ -52,7 +52,6 @@ namespace addonager
             }
         }
 
-
         //Notes
         //Addon description that appears when the user hovers over the addon entry in the addons list.Like Title, this tag can be localized by appending a hyphen followed by locale name, and contain UI escape sequences.
         //## Notes: "Nothing to be done"

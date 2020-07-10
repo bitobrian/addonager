@@ -32,11 +32,11 @@ namespace addonager
 
         private void LaunchGitHubSite(object sender, RoutedEventArgs e)
         {
-            var tacos = Directory.EnumerateDirectories(@"C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns").ToList();
+            var addonFolders = Directory.EnumerateDirectories(@"C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns").ToList();
 
-            foreach (var iteam in tacos)
+            foreach (var item in addonFolders)
             {
-                _listOfAddons.Add(new AddonVM() { Name = iteam, Version="0.0.0"});
+                _listOfAddons.Add(new AddonVM() { Title = item, Version="0.0.0"});
             }
         }
 
