@@ -84,7 +84,7 @@ namespace addonager
     }
 
     [Flags]
-    public enum WindowCommandsOverlayBehavior
+    public enum WindowCommandsOverlayBehaviors
     {
         /// <summary>
         /// Doesn't overlay a hidden TitleBar.
@@ -98,7 +98,7 @@ namespace addonager
     }
 
     [Flags]
-    public enum OverlayBehavior
+    public enum OverlayBehaviors
     {
         /// <summary>
         /// Doesn't overlay Flyouts nor a hidden TitleBar.
