@@ -10,4 +10,4 @@
 Words
 
 ## Contributing
-Please take a look at our [contributing](https://github.com/bitobrian/addonager/blob/master/CONTRIBUTING.md) guidelines if you're interested in helping!
+Please take a look at our [contributing](https://github.com/bitobrian/addonager/blob/master/Contributing.md) guidelines if you're interested in helping!
