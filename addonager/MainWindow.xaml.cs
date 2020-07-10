@@ -1,6 +1,7 @@
 ﻿using MahApps.Metro.Controls;
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -30,7 +31,7 @@ namespace addonager
             this.DataContext = this;
         }
 
-        private void LaunchGitHubSite(object sender, RoutedEventArgs e)
+        private void LoadAddonList(object sender, RoutedEventArgs e)
         {
             var addonFolders = Directory.EnumerateDirectories(@"C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns").ToList();
 
@@ -40,8 +41,9 @@ namespace addonager
             }
         }
 
-        private void DeployCupCakes(object sender, RoutedEventArgs e)
+        private void OpenLinkToGithub(object sender, RoutedEventArgs e)
         {
+            Process.Start("explorer", "https://www.github.com/bitobrian/addonager/issues");
             //C:\Program Files (x86)\World of Warcraft\_retail_\Interface
 
             //secondFlyout.IsOpen = !secondFlyout.IsOpen;

@@ -27,7 +27,7 @@
 
     <mah:MetroWindow.LeftWindowCommands>
         <mah:WindowCommands>
-            <Button Click="LaunchGitHubSite" ToolTip="Open up the GitHub site">
+            <Button Click="LoadAddonList" ToolTip="Reload addon list">
                 <iconPacks:PackIconFontAwesome Width="22"
                                   Height="22" Kind="SyncAltSolid" />
             </Button>
@@ -36,14 +36,14 @@
 
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
-            <Button Click="DeployCupCakes" Content="Deploy CupCakes">
+            <Button Click="OpenLinkToGithub" Content="Report an issue">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <iconPacks:PackIconModern Width="22"
+                            <iconPacks:PackIconBoxIcons Width="22"
                                         Height="22"
                                         VerticalAlignment="Center"
-                                        Kind="FoodCupcake" />
+                                        Kind="LogosGithub" />
                             <TextBlock Margin="4 0 0 0"
                          VerticalAlignment="Center"
                          Text="{Binding}" />
@@ -53,13 +53,14 @@
             </Button>
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
-
+    <Grid>
     <ListView ItemsSource="{Binding ListOfAddons}">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextBlock Text="{Binding Name}" />
-            </DataTemplate>
-        </ListView.ItemTemplate>
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Title" Width="120" DisplayMemberBinding="{Binding Title}" />
+                <GridViewColumn Header="Version" Width="50" DisplayMemberBinding="{Binding Version}" />
+            </GridView>
+        </ListView.View>
     </ListView>
-    
+   </Grid> 
 </mah:MetroWindow>
