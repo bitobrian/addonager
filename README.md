@@ -10,8 +10,4 @@
 Words
 
 ## Contributing
-Please take a look at our [contributing](https://github.com/anfederico/Clairvoyant/blob/master/CONTRIBUTING.md) guidelines if you're interested in helping!
-#### Pending Features
-- Export model
-- Support for multiple sklearn SVM models
-- Visualization for models with more than 2 features
+Please take a look at our [contributing](https://github.com/bitobrian/addonager/blob/master/CONTRIBUTING.md) guidelines if you're interested in helping!
