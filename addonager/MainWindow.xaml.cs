@@ -33,11 +33,39 @@ namespace addonager
 
         private void LoadAddonList(object sender, RoutedEventArgs e)
         {
-            var addonFolders = Directory.EnumerateDirectories(@"C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns").ToList();
+            ListOfAddons.Clear();
 
-            foreach (var item in addonFolders)
+            DirectoryInfo directoryInfo = new DirectoryInfo(@"C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns");
+
+            var addonDirectories = directoryInfo.EnumerateDirectories();
+
+            //var addonFolders = Directory.EnumerateDirectories(@"C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns").ToList();
+
+            foreach (var item in addonDirectories)
             {
-                _listOfAddons.Add(new AddonVM() { Title = item, Version="0.0.0"});
+                string version = "";
+
+                var addonFiles = new DirectoryInfo(item.FullName).EnumerateFiles();
+
+                var tocFileInfo = addonFiles.Where(x => x.Extension.Contains("toc")).FirstOrDefault();
+
+                var tocFile = File.ReadAllText(tocFileInfo.FullName);
+
+                var tocPropertiesArray = tocFile.Split(Environment.NewLine);
+
+                foreach (var index in tocPropertiesArray)
+                {
+                    if (index.Contains("Version"))
+                    {
+                        version = index;
+                    }
+                }
+
+                _listOfAddons.Add(new AddonVM() 
+                { 
+                    Title = item.Name, 
+                    Version = version
+                });
             }
         }
 
